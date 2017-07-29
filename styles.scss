@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One'); // 'Russo One', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');  // 'Fira Sans Condensed', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet');  // font-family: 'Oswald', sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');  // font-family: 'Open Sans', sans-serif;
+
+
+$primarycolor: #454552;
+$secondarycolor: #FF4242;
+$thirdcolor: #97EAD2;
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-size: 100%;
+  line-height: 1.7;
+  font-family: 'Open Sans', sans-serif, medium;
+
+}
+
+h1, h2, h3, h4, h5 {
+  font-size: 1.667em;
+  line-height: 1.25em;
+  margin-bottom: .025em;
+  font-family: 'Oswald', sans-serif, bold;
+
+}
+
+#header {
+  width: auto;
+  height: 10em;
+  margin: 0px;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-bottom-style: solid;
+  border-width: thin;
+
+}
+
+#nav {
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  ul {
+    padding-top: 8em;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    margin: 0;
+    display: block;
+  }
+
+  li {
+  display: inline;
+
+}
+
+  a {
+    text-decoration: none;
+    color: $secondarycolor;
+    font-size: .8em;
+    padding-right: .4em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.3744px;
+    font-family: 'Oswald', sans-serif, bold;
+  }
+}
+
+.centered {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  display: block;
+}
+
+
+p {
+  line-height: 1.7;
+  margin-bottom: 2em;
+  font-size: 1em;
+
+}
+
+
+.portfolio {
+  display: block;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-bottom-style: solid;
+  border-width: thin;
+  margin-bottom: 4%;
+  list-style-image: none;
+  list-style-type: none;
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+
+
+  li {
+    border-top-color: rgba(0, 0, 0, 0.2);
+    border-top-style: solid;
+    border-width: thin;
+    display: list-item;
+    padding-bottom: 4%;
+    padding-top: 4%;
+    text-align: left;
+
+      img {
+        //margin-bottom: 1em;
+        margin: 0;
+        margin-right: 0;
+      }
+
+    }
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 2em;
+      margin: 0;
+      display: block;
+      border-image-repeat: stretch;
+    }
+
+  }
+
+
+  /********************************************* Form Section ********************************************/
+  #formSection {
+      height: 32em;
+      width: 100%;
+      border-top: 1px solid white;
+      display: block;
+      border-bottom-color: rgba(0, 0, 0, 0.2);
+      border-bottom-style: solid;
+      border-width: thin;
+      margin-bottom: 4%;
+
+      h2 {
+        text-decoration: none;
+        color: $secondarycolor;
+        font-size: 1.5em;
+        padding-right: .4em;
+        margin: .5em;
+        line-height: 1.5;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-family: 'Oswald', sans-serif, bold;
+        text-align: center;
+      }
+  }
+
+
+
+  form {
+      max-width: 450px;
+      margin: 0 auto 50px;
+
+      input, textarea {
+        border: 3px solid #283044;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        box-sizing: border-box;
+    }
+}
+
+
+  #formButton {
+          background: #283044;
+          color: white;
+          font-size : 18px;
+          text-transform: uppercase;
+          width: 33%;
+
+          &:hover {
+            background:  #97EAD2;;
+      }
+  }
+
+
+
+  .submit-wrap {
+          text-align: right;
+  }
+
+  input:focus,  textarea:focus {
+          outline: none;
+          border-color: #97EAD2;
+  }
+
+  textarea {
+          height: 10em;
+          font-size: 16px;
+          font-weight: bold;
+  }
+
+
+  .contact-info-group label{
+          width: 50%;
+          /*padding-right: 10px;*/
+          float: left;
+          box-sizing: border-box;
+  }
+          label:nth-child(1) {
+                  padding-right: 5px;
+
+          }
+
+          label:nth-child(2) {
+                  padding-left: 5px;
+          }
+
+
+
+  label {
+          display: block;
+          margin-bottom: 20px;
+  }
+
+  form span {
+          display: block;
+          font-size: .8em;//1.1em;
+          color: black;
+          padding-bottom: .3em;
+  }
+
+
+
+  /********************************************* Footer **************************************************/
+
+#footer {
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-top-style: solid;
+  border-width: thin;
+  padding-top: 1em;
+  display: inline;
+  font-weight: 800;
+  text-align: center;
+
+  p {
+    font-size: .8em;
+    text-align: center;
+    margin-top: .5em;
+    margin-bottom: .5em;
+  }
+
+  span {
+    text-align: center;
+    padding: .2em;
+  }
+
+}
+
+
+
+/***************************************** Media Queries ***************************************************/
+
+@media screen and (min-width: 800px){
+  body {
+    font-family: 'Open Sans', sans-serif, medium;
+    font-size: 100%;
+
+  }
+
+// ************************************** Header ***********************************************************/
+  #header {
+    width: auto;
+    height: 4em;
+    margin: 0px;
+    border-bottom-style: none;
+
+  }
+
+  #nav {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    ul {
+      padding-top: 1.5em;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 0;
+      margin: 0;
+      display: block;
+      float: right;
+    }
+
+    li {
+    display: inline;
+
+  }
+
+    a {
+      font-size: 1em;
+      padding-right: .4em;
+      line-height: 1.8;
+      text-transform: uppercase;
+      letter-spacing: .5px;//0.3744px;
+      font-family: 'Oswald', sans-serif, bold;
+    }
+
+}
+
+
+
+//**************************************************** Main section *************************************/
+.centered {
+  padding-top: 4em;
+  width: 75%;
+
+  #headshot {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 50%;
+  }
+
+  h3 {
+    text-align: center;
+    font-size: 1.2em;
+    font-family: 'Oswald', sans-serif, bold;
+
+  }
+
+
+}
+
+#intro {
+  width: 60%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.portfolio {
+  display: inline-block;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  border-bottom-style: solid;
+  border-width: thin;
+  margin-bottom: 4%;
+  margin-top: 4%;
+  list-style-image: none;
+  list-style-type: none;
+  padding: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+
+
+  li {
+    border-top-color: rgba(0, 0, 0, 0.2);
+    border-top-style: solid;
+    border-width: thin;
+    display: list-item;
+    padding-bottom: 4%;
+    padding-top: 4%;
+    text-align: left;
+  }
+
+    p {
+      width: 68%;
+      margin-left: .5%;
+      float: right;
+      margin-top: 0;
+  
+    }
+
+    span {
+      width: 33%;
+    }
+
+     /*  img {
+        //margin-bottom: 1em;
+        margin: 0;
+        margin-right: 0;
+        width: auto;
+      } */
+
+
+    img {
+      width: 30%;
+      max-width: 100%;
+      height: auto;
+      margin: 0 auto 2em;
+      margin-bottom: 2em;
+      display: inline-block;
+
+    }
+
+  }
+
+// ************************************************* Contact Form **************************************/
+#formSection {
+    height: 32em;
+    width: 100%;
+    border-top: 1px solid white;
+    display: block;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    border-bottom-style: solid;
+    border-width: thin;
+    margin-bottom: 4%;
+
+
+    h2 {
+      text-decoration: none;
+      color: $secondarycolor;
+      font-size: 2em;
+      padding-right: .4em;
+      margin: .5em;
+      line-height: 2;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: 'Oswald', sans-serif, bold;
+      text-align: center;
+    }
+}
+
+
+
+form {
+    max-width: 450px;
+    margin: 0 auto 50px;
+
+    input, textarea {
+      border: 3px solid #283044;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      box-sizing: border-box;
+  }
+}
+
+
+#formButton {
+        background: #283044;
+        color: white;
+        font-size : 18px;
+        text-transform: uppercase;
+        width: 33%;
+
+        &:hover {
+          background:  #97EAD2;;
+    }
+}
+
+
+
+.submit-wrap {
+        text-align: right;
+}
+
+input:focus,  textarea:focus {
+        outline: none;
+        border-color: #97EAD2;
+}
+
+textarea {
+        height: 10em;
+        font-size: 16px;
+        font-weight: bold;
+}
+
+
+.contact-info-group label{
+        width: 50%;
+        /*padding-right: 10px;*/
+        float: left;
+        box-sizing: border-box;
+}
+        label:nth-child(1) {
+                padding-right: 5px;
+
+        }
+
+        label:nth-child(2) {
+                padding-left: 5px;
+        }
+
+
+
+label {
+        display: block;
+        margin-bottom: 20px;
+}
+
+form span {
+        display: block;
+        font-size: 1.1em;
+        color: black;
+        padding-bottom: .3em;
+}
+
+//************************************************** Footer ********************************************/
+#footer {
+  border-top-color: rgba(0, 0, 0, 0.2);
+  border-top-style: solid;
+  border-width: thin;
+  padding-top: 1em;
+  display: inline;
+  font-weight: 800;
+  text-align: center;
+
+
+  p {
+    font-size: 1em;
+    text-align: center;
+    margin-top: .5em;
+    margin-bottom: 1em;
+  }
+
+  span {
+    text-align: center;
+    padding: .2em;
+
+  }
+
+}
+
+}
