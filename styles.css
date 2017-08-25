@@ -49,7 +49,8 @@ h1, h2, h3, h4, h5 {
     margin: 0;
     display: block; }
   #nav li {
-    display: inline; }
+    display: inline;
+    margin: .5em; }
   #nav a {
     text-decoration: none;
     color: #FF4242;
@@ -58,18 +59,26 @@ h1, h2, h3, h4, h5 {
     line-height: 1.5;
     text-transform: uppercase;
     letter-spacing: 0.3744px;
-    font-family: 'Oswald', sans-serif, bold; }
+    font-family: 'Oswald', sans-serif, bold;
+    font-weight: bold; }
+    #nav a:hover {
+      color: #97EAD2; }
 
 #github {
   text-align: center;
   display: block;
   font-size: 1em;
   font-weight: bold;
-  padding-top: 1em;
-  padding-bottom: 1em; }
+  padding-top: 0;
+  padding-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%; }
   #github a {
-    text-decoration: none;
+    text-decoration: underline;
     color: #FF4242; }
+    #github a:hover {
+      color: #97EAD2; }
 
 .centered {
   width: 90%;
@@ -77,6 +86,18 @@ h1, h2, h3, h4, h5 {
   margin-right: auto;
   line-height: 1.7;
   display: block; }
+
+#portfolioH2 {
+  text-decoration: none;
+  color: #FF4242;
+  font-size: 1.5em;
+  padding-right: .4em;
+  margin-top: 1em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Oswald', sans-serif, bold;
+  text-align: center; }
 
 p {
   line-height: 1.7;
@@ -93,7 +114,8 @@ p {
   list-style-type: none;
   padding: 0px;
   margin-left: 0px;
-  margin-right: 0px; }
+  margin-right: 0px;
+  margin-top: 0px; }
   .portfolio li {
     border-top-color: rgba(0, 0, 0, 0.2);
     border-top-style: solid;
@@ -207,6 +229,8 @@ form span {
   #footer span {
     text-align: center;
     padding: .2em; }
+  #footer .fa:hover {
+    color: #97EAD2; }
 
 /***************************************** Media Queries ***************************************************/
 @media screen and (min-width: 800px) {
@@ -233,7 +257,8 @@ form span {
       display: block;
       float: right; }
     #nav li {
-      display: inline; }
+      display: inline;
+      margin: 0; }
     #nav a {
       font-size: 1em;
       padding-right: .4em;
@@ -260,6 +285,14 @@ form span {
     text-align: center;
     margin-left: auto;
     margin-right: auto; }
+
+  #github {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto; }
+
+  #portfolioH2 {
+    margin-top: 4em; }
 
   .portfolio {
     display: inline-block;
@@ -385,6 +418,8 @@ form span {
     display: inline;
     font-weight: 800;
     text-align: center; }
+    #footer .socialSection {
+      padding-bottom: 1em; }
     #footer p {
       font-size: 1em;
       text-align: center;

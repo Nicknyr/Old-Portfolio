@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5 {
 
   li {
   display: inline;
+  margin: .5em;
 
 }
 
@@ -80,6 +81,11 @@ h1, h2, h3, h4, h5 {
     text-transform: uppercase;
     letter-spacing: 0.3744px;
     font-family: 'Oswald', sans-serif, bold;
+    font-weight: bold;
+
+    &:hover {
+      color: $thirdcolor;
+    }
   }
 }
 
@@ -88,12 +94,19 @@ h1, h2, h3, h4, h5 {
   display: block;
   font-size: 1em;
   font-weight: bold;
-  padding-top: 1em;
+  padding-top: 0;
   padding-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 
   a {
-    text-decoration: none;
+    text-decoration: underline;
     color: $secondarycolor;
+
+    &:hover {
+      color: $thirdcolor;
+    }
   }
 
 }
@@ -106,6 +119,19 @@ h1, h2, h3, h4, h5 {
   display: block;
 }
 
+#portfolioH2 {
+    text-decoration: none;
+    color: $secondarycolor;
+    font-size: 1.5em;
+    padding-right: .4em;
+    margin-top: 1em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Oswald', sans-serif, bold;
+    text-align: center;
+
+}
 
 p {
   line-height: 1.7;
@@ -126,7 +152,7 @@ p {
   padding: 0px;
   margin-left: 0px;
   margin-right: 0px;
-
+  margin-top: 0px;
 
   li {
     border-top-color: rgba(0, 0, 0, 0.2);
@@ -284,6 +310,13 @@ p {
     padding: .2em;
   }
 
+  .fa {
+    &:hover {
+      color: $thirdcolor;
+
+    }
+  }
+
 }
 
 
@@ -323,6 +356,7 @@ p {
 
     li {
     display: inline;
+    margin: 0;
 
   }
 
@@ -366,6 +400,18 @@ p {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+
+}
+
+#github {
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+#portfolioH2 {
+  margin-top: 4em;
 }
 
 
@@ -537,6 +583,9 @@ form span {
   font-weight: 800;
   text-align: center;
 
+  .socialSection {
+    padding-bottom: 1em;
+  }
 
   p {
     font-size: 1em;
