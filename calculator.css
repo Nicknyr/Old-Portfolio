@@ -73,8 +73,11 @@ section {
     color: ghostwhite;
     display: inline-block;
     vertical-align: middle;
-    padding-top: .5em;
-    font-weight: bolder; }
+    font-weight: bolder;
+    height: 100%;
+    width: 100%;
+    overflow: contain;
+    line-height: 38px; }
   .row1:hover, .row2:hover, .row3:hover, .row4:hover, .row5:hover {
     background: transparent;
     color: #c6c6c6;
