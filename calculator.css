@@ -88,11 +88,11 @@ section {
 @media (max-width: 800px) {
   section {
     width: 45%; } }
-@media (min-width: 500px) and (max-width: 799) {
+@media (min-width: 400px) and (max-width: 799) {
   section {
-    width: 65%; } }
-@media (min-width: 100px) and (max-width: 499px) {
+    width: 85%; } }
+@media (min-width: 100px) and (max-width: 399px) {
   section {
-    width: 75%; } }
+    width: 95%; } }
 
 /*# sourceMappingURL=styles.css.map */
