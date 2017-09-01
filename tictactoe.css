@@ -1,0 +1,41 @@
+body {
+  background-color: #1abc9c;
+  color: ghostwhite;
+  margin: 0px;
+  text-align: center; }
+
+h1 {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 3em; }
+
+.col {
+  display: inline-block;
+  text-align: center;
+  height: 4em;
+  width: 4em;
+  background: #34495e;
+  margin-top: 2px;
+  font-size: 2em;
+  line-height: 4em;
+  overflow: auto; }
+
+button {
+  margin-top: 1em;
+  padding: .5em;
+  font-size: 1em;
+  text-transform: uppercase;
+  background-color: #34495e;
+  color: ghostwhite;
+  border: 1px solid white;
+  font-weight: bold; }
+  button:hover {
+    color: #34495e;
+    background-color: ghostwhite; }
+
+@media (max-width: 500px) {
+  .col {
+    height: 3em;
+    width: 3em; } }
+
+/*# sourceMappingURL=styles.css.map */
