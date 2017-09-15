@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pomodoro Clock</title>
+    <link href="pomodoro.css" rel="stylesheet">
+  </head>
+  <body>
+
+      <h1>Pomodoro Clock</h1>
+
+      <div id="container">
+        <div id="break">
+          <span>Break Length</span>
+          <br>
+          <div class="timerContents">
+            <span id="subtractBreakMinute">-</span>
+            <span id="breakDisplay">5</span>
+            <span id="addBreakMinute">+</span>
+          </div>
+        </div>
+
+        <div id="session">
+          <span>Session Length</span>
+          <br>
+          <div class="timerContents">
+            <span id="subtractSessionMinute">-</span>
+            <span id="sessionDisplay">25</span>
+            <span id="addSessionMinute">+</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="circle">
+        <span>
+          <h3>Time Remaining :</h3>
+        </span>
+        <span id="clock">
+          <div class="minutes"></div>
+          <div class="seconds"></div>
+        </span>
+      </div>
+
+      <div id="buttons">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+      </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="pomodoro.js"></script>
+  </body>
+</html>
