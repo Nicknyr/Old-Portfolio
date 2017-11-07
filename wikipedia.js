@@ -1,6 +1,5 @@
 $(document).ready(function(){
   $('#search').click(function(){
-
     // Gets search input
     var searchTerm = $('#searchTerm').val();
     // API url with searchTerm input
@@ -16,7 +15,7 @@ $(document).ready(function(){
         // Gets description  console.log(data[2][0]);
         // Gets link  console.log(data[3][0]);
         $('#output').html('');
-        
+
         for(var i = 0; i < data[1].length; i++){
         $('#output').prepend("<li><a href= "+data[3][i]+">"+data[1][i] +"</a><p>"+data[2][i]+"</p></li>");
         };
@@ -25,8 +24,12 @@ $(document).ready(function(){
           alert("Error");
       }
     })
+  })
 
-
+  $('#searchTerm').keypress(function(e) {
+    if(e.which == 13) {
+      $('#search').click();
+    }
   })
 
 });
