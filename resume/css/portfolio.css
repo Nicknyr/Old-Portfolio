@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; }
+
+h3 {
+  color: #0AA1DA; }
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: lightgrey; }
+
+#picture1, #picture3 {
+  opacity: 1; }
+
+#header {
+  width: 100%;
+  height: 2em;
+  background-color: #0088CC; }
+  #header #nav {
+    display: inline-block;
+    list-style-type: none;
+    margin-top: .3em;
+    margin-left: 5%; }
+    #header #nav li {
+      display: inline-block;
+      padding-right: 1em;
+      text-transform: uppercase;
+      color: white; }
+    #header #nav a {
+      text-decoration: none;
+      color: white; }
+      #header #nav a:hover {
+        color: black; }
+
+#intro {
+  width: 100%;
+  height: 14em;
+  background-color: #0AA1DA;
+  border-bottom: 2px solid black;
+  -webkit-box-shadow: 20px 0 5px -2px lightgray;
+  box-shadow: 10px 0 5px -2px lightgray; }
+  #intro h1 {
+    margin-top: 0;
+    margin-left: 8%;
+    margin-bottom: .05em;
+    padding-top: 2em;
+    color: white;
+    font-size: 2.5em;
+    font-weight: 100;
+    width: 50%; }
+  #intro h3 {
+    margin-top: 0;
+    margin-left: 8%;
+    color: white;
+    width: 50%; }
+  #intro #headshot {
+    float: right;
+    border-radius: 100%;
+    margin-right: 9em;
+    margin-top: 2.5em; }
+
+#main {
+  height: 60em; }
+
+#project1, #project3 {
+  height: auto;
+  width: 33.5%;
+  background-color: white;
+  float: left;
+  clear: both; }
+  #project1 h3, #project3 h3 {
+    margin-top: 2em; }
+  #project1 p a, #project3 p a {
+    text-decoration: none;
+    color: #0088CC;
+    font-weight: bold; }
+    #project1 p a:hover, #project3 p a:hover {
+      color: black; }
+  #project1 h3, #project3 h3 {
+    margin-left: 5.5em; }
+  #project1 p, #project3 p {
+    margin-left: 6.5em;
+    margin-right: 2em; }
+
+#project2 {
+  height: auto;
+  width: 33.5%;
+  background-color: white;
+  float: right;
+  clear: both; }
+  #project2 h3 {
+    margin-top: 2em; }
+  #project2 p a {
+    text-decoration: none;
+    color: #0088CC;
+    font-weight: bold; }
+    #project2 p a:hover {
+      color: black; }
+  #project2 h3 {
+    margin-left: 2em; }
+  #project2 p {
+    margin-right: 6.5em;
+    margin-left: 2.5em; }
+
+#pic2 {
+  float: left;
+  overflow: contain; }
+
+#pic1, #pic3 {
+  float: right;
+  overflow: contain; }
+
+#social {
+  width: 100%;
+  height: 12em;
+  background-color: #0AA1DA;
+  clear: both;
+  overflow: hidden; }
+  #social i {
+    color: white;
+    line-height: inherit; }
+  #social #social-icons {
+    width: 100%;
+    padding-top: 2em;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+    #social #social-icons li {
+      display: inline;
+      margin-left: 7em;
+      margin-right: 7em; }
+  #social #social-links {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-left: 0; }
+    #social #social-links li {
+      display: inline;
+      margin-left: 2.5em;
+      margin-right: 2.5em; }
+      #social #social-links li a {
+        color: white;
+        text-decoration: none; }
+        #social #social-links li a:hover {
+          color: black; }
+
+#footer {
+  width: 100%;
+  height: auto;
+  background-color: #0088CC;
+  display: block; }
+  #footer ul {
+    display: inline-block;
+    color: white;
+    margin-left: 8%;
+    padding-left: 0; }
+    #footer ul li {
+      display: inline-block;
+      margin-right: .5em; }
+  #footer span {
+    float: right;
+    margin-right: 10em;
+    padding-top: 1em; }
+    #footer span a {
+      text-decoration: none;
+      color: white; }
+      #footer span a:hover {
+        color: black; }
+
+.circle {
+  width: 70px;
+  height: 70px;
+  background-color: #0088CC;
+  border-radius: 100%;
+  line-height: 70px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block; }
+
+@media only screen and (max-width: 700px) {
+  #header {
+    width: 100%;
+    height: 8em;
+    background-color: #0088CC; }
+    #header #nav {
+      display: block;
+      width: 100%;
+      margin-left: 0;
+      margin-top: 0;
+      padding-left: 0; }
+      #header #nav li {
+        display: block;
+        text-align: center;
+        padding: .5em; }
+
+  #intro {
+    height: 20em; }
+    #intro h1 {
+      margin-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      text-align: center;
+      padding-top: 0;
+      font-size: 2.5em; }
+    #intro h3 {
+      margin-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      color: white;
+      width: 100%;
+      text-align: center; }
+    #intro #headshot {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      float: none;
+      padding: 1.5em; }
+
+  #project1, #project2, #project3 {
+    width: 100%; }
+    #project1 h3, #project2 h3, #project3 h3 {
+      margin-left: 1.5em;
+      width: 100%; }
+    #project1 p, #project2 p, #project3 p {
+      margin-left: 1em;
+      margin-right: 0;
+      width: 90%; }
+
+  #pic2 img {
+    width: 100%; }
+
+  #social {
+    height: auto;
+    clear: both; }
+    #social #social-icons {
+      width: 100%;
+      padding-left: 0;
+      padding-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; }
+      #social #social-icons li {
+        display: block;
+        margin: 2em; }
+    #social #social-links li {
+      display: none; }
+
+  #footer {
+    height: 9em; }
+    #footer ul {
+      display: inline-block;
+      width: 100%;
+      margin: 0;
+      padding-top: 1.5em; }
+      #footer ul li {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin-bottom: .3em; }
+    #footer span {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: center; } }
+
+/*# sourceMappingURL=portfolio.css.map */
