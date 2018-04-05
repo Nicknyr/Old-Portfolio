@@ -44,13 +44,15 @@ h1, h2, h3, h4, h5 {
   margin-left: auto;
   margin-right: auto;
   text-align: center; }
+  #nav i {
+    float: left; }
   #nav ul {
     padding-top: .5em;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: .5em;
     margin: 0;
-    display: block; }
+    display: none; }
   #nav li {
     display: inline;
     margin: .5em; }
@@ -88,7 +90,8 @@ h1, h2, h3, h4, h5 {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.7;
-  display: block; }
+  display: block;
+  padding-top: 5em; }
 
 #portfolioH2 {
   text-decoration: none;
@@ -232,18 +235,21 @@ form span {
   #footer span {
     text-align: center;
     padding: .2em; }
-  #footer .fa {
+  #footer .fab {
     text-decoration: none;
     color: black; }
-    #footer .fa a {
+    #footer .fab a {
       text-decoration: none; }
-    #footer .fa:hover {
+    #footer .fab:hover {
       color: #97EAD2;
       text-decoration: none; }
 
 /***************************************** Media Queries ***************************************************/
 /* MEDIUM DEVICES, DESKTOPS ********************************/
 @media (min-width: 992px) {
+  .fa-bars::before {
+    display: none; }
+
   body {
     font-family: 'Open Sans', sans-serif, medium;
     font-size: 100%; }
@@ -438,7 +444,7 @@ form span {
     #footer span {
       text-align: center;
       padding: .2em; } }
-/* SMALL DEVICES, TABLETS *****************************/
+/* TABLETS *****************************/
 @media (min-width: 768px) and (max-width: 991px) {
   body {
     font-family: 'Open Sans', sans-serif, medium;
