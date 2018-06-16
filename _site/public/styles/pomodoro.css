@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron");
+body {
+  background: #333333;
+  color: ghostwhite; }
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: #83D0F2;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 3em;
+  font-weight: lighter; }
+
+#container {
+  width: 100%;
+  text-align: center; }
+
+span {
+  text-transform: uppercase; }
+
+#circle {
+  height: 20em;
+  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  border-radius: 50%;
+  background: #333333;
+  border: 1px solid #83D0F2;
+  text-align: center;
+  display: block;
+  overflow: hidden; }
+  #circle h3 {
+    margin-top: 5em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    vertical-align: middle; }
+  #circle #clock {
+    margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3em; }
+
+#break {
+  height: 5em;
+  width: 10em;
+  display: inline-block; }
+
+#session {
+  height: 5em;
+  width: 10em;
+  display: inline-block; }
+
+.timerContents {
+  font-size: 2em;
+  padding-top: .3em; }
+  .timerContents span {
+    margin-right: .2em; }
+
+#buttons {
+  width: 40%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  padding: 1em; }
+  #buttons :nth-child(1), #buttons :nth-child(2), #buttons :nth-child(3) {
+    font-size: 1em;
+    margin-right: 1.2em;
+    margin-left: 1.2em;
+    border: 2px solid #83D0F2;
+    background-color: #333333;
+    color: ghostwhite;
+    width: 5em;
+    height: 2em;
+    text-transform: uppercase; }
+  #buttons :hover {
+    background-color: ghostwhite;
+    color: #333333; }
+
+/************ Media Queries ***********************************************/
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+  #circle {
+    width: 100%; }
+
+  #buttons {
+    margin-top: .5em; }
+    #buttons :nth-child(1), #buttons :nth-child(2), #buttons :nth-child(3) {
+      margin-bottom: 1.5em; }
+
+  #break, #session {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em; } }
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 350px) {
+  #circle {
+    width: 90%; } }
+@media only screen and (min-width: 400px) {
+  #circle {
+    width: 80%; } }
+/* Small Devices, Tablets */
+@media only screen and (min-width: 768px) {
+  #circle {
+    width: 35%; }
+
+  #break, #session {
+    display: inline-block;
+    margin-right: 2em;
+    margin-left: 2em; } }
+/* Medium Devices, Desktops */
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1200px) {
+  #circle {
+    width: 25%; } }
+
+/*# sourceMappingURL=styles.css.map */

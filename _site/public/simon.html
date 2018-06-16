@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simon Says</title>
+    <link href="styles/simon.css" rel="stylesheet">
+  </head>
+  <body>
+
+  <div id="game-over-container">
+    <div id="game-over-lose">
+      <h2>You lose!</h2>
+      <button type="button" id="restart-button" onClick="restart()">Play again?</button>
+      <span id="close-x">X</span>
+    </div>
+  </div>
+
+
+  <div id="container">
+    <div id="center">
+      <h2>Simon</h2>
+      <hr>
+      <div id="3buttons">
+        <div id="buttons">
+        <p class="labels" id="reset-label">Reset</p>
+      <button id="reset-button">
+      </button>
+        </div>
+
+    <p class="labels">Level</p>
+    <p class="labels">Strict</p>
+
+    <div id="level">
+      <p></p>
+    </div>
+
+    <div id="strict">
+      <label class="switch">
+        <input type="checkbox" id="strict-button">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+      </div>
+      <div id="on-off">
+        <span id="on"><h3>On</h3></span>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider" id="on-off-button"></span>
+          </label>
+        <span id="off"><h3>Off</h3></span>
+
+      </div>
+    </div>
+    <div id="green" class="button" data-simonButton="1"></div>
+    <div id="red" class="button" data-simonButton="2"></div>
+    <div id="yellow" class="button" data-simonButton="3"></div>
+    <div id="blue" class="button" data-simonButton="4"></div>
+  </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="simon.js"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+body {
+  background-color: #1abc9c;
+  color: ghostwhite;
+  margin: 0px;
+  text-align: center; }
+
+#overlay-win {
+  color: white;
+  height: 15em;
+  width: 45%;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
+  margin-top: 5%;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0px 0px 12px black;
+  border-radius: 10px;
+  border: 1px solid ghostwhite;
+  display: none;
+  background-color: #2ecc71; }
+  #overlay-win h2 {
+    text-align: center;
+    vertical-align: middle; }
+  #overlay-win .close-x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border: 1px solid white; }
+
+#overlay-lose {
+  color: white;
+  height: 15em;
+  width: 45%;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
+  margin-top: 5%;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0px 0px 12px black;
+  border-radius: 10px;
+  border: 1px solid ghostwhite;
+  display: none;
+  background-color: #c0392b; }
+  #overlay-lose h2 {
+    text-align: center;
+    vertical-align: middle; }
+  #overlay-lose .close-x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 50px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    border: 1px solid white; }
+
+#x-or-o {
+  color: white;
+  display: none;
+  height: 15em;
+  width: 45%;
+  background-color: #9b59b6;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
+  margin-top: 5%;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0px 0px 12px black;
+  border-radius: 10px;
+  border: 1px solid ghostwhite; }
+  #x-or-o h3 {
+    margin-top: 3em; }
+  #x-or-o button {
+    width: 15%;
+    margin: .5em;
+    background-color: #1abc9c;
+    box-shadow: 0px 0px 5px black;
+    border: 1px solid ghostwhite; }
+    #x-or-o button:hover {
+      background-color: ghostwhite;
+      color: #1abc9c; }
+
+h1 {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 3em; }
+
+.col {
+  display: inline-block;
+  text-align: center;
+  height: 4em;
+  width: 4em;
+  background: #34495e;
+  margin-top: 2px;
+  font-size: 2em;
+  line-height: 4em;
+  overflow: auto; }
+
+button {
+  margin-top: 1em;
+  padding: .5em;
+  font-size: 1em;
+  text-transform: uppercase;
+  background-color: #34495e;
+  color: ghostwhite;
+  border: 1px solid white;
+  font-weight: bold; }
+  button:hover {
+    color: #34495e;
+    background-color: ghostwhite; }
+
+@media (max-width: 500px) {
+  .col {
+    height: 3em;
+    width: 3em;
+    overflow: auto; } }
+
+/*# sourceMappingURL=styles.css.map */

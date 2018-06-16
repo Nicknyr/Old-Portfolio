@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif; }
+
+h3 {
+  color: #0AA1DA; }
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: lightgrey; }
+
+#header {
+  width: 100%;
+  height: 2em;
+  background-color: #0088CC; }
+  #header #nav {
+    display: inline-block;
+    list-style-type: none;
+    margin-top: .3em;
+    margin-left: 5%; }
+    #header #nav li {
+      display: inline-block;
+      padding-right: 1em;
+      text-transform: uppercase;
+      color: white; }
+    #header #nav a {
+      text-decoration: none;
+      color: white; }
+      #header #nav a:hover {
+        color: black; }
+
+#intro {
+  width: 100%;
+  height: 14em;
+  background-color: #0AA1DA;
+  -webkit-box-shadow: 0 10px 20px -2px lightgray; }
+  #intro h1 {
+    margin-top: 0;
+    margin-left: 8%;
+    margin-bottom: .05em;
+    padding-top: 2em;
+    color: white;
+    font-size: 2.5em;
+    font-weight: 100;
+    width: 50%; }
+  #intro h3 {
+    margin-top: 0;
+    margin-left: 8%;
+    color: white;
+    width: 50%; }
+  #intro #headshot {
+    float: right;
+    border-radius: 50%;
+    margin-right: 9em;
+    margin-top: 2.5em; }
+
+#to {
+  width: 33.5%;
+  height: 64.3em;
+  background-color: #F7F7F7;
+  float: left;
+  -webkit-box-shadow: 20px 0 5px -2px lightgray;
+  box-shadow: 10px 0 5px -2px lightgray; }
+  #to span:nth-child(even) {
+    float: right;
+    font-weight: bold;
+    margin-right: 5em; }
+  #to h3 {
+    margin-left: 5.5em;
+    margin-top: 1.5em;
+    clear: both; }
+  #to p {
+    margin-left: 6.5em; }
+  #to hr {
+    width: 65%;
+    margin-left: 6.5em; }
+  #to ul {
+    margin-left: 14.5%;
+    list-style-type: none; }
+
+#letter {
+  width: 60%;
+  height: auto;
+  background-color: white;
+  float: right;
+  padding-left: 5%; }
+  #letter p {
+    margin-left: 2em;
+    margin-top: 2em;
+    margin-right: 5em; }
+  #letter img {
+    margin-top: 2em; }
+  #letter #name {
+    margin-top: .5em;
+    margin-bottom: 0;
+    font-weight: bolder; }
+  #letter #title {
+    margin-top: .2em; }
+
+#social {
+  width: 100%;
+  height: 12em;
+  background-color: #0AA1DA;
+  clear: both;
+  overflow: hidden; }
+  #social i {
+    color: white;
+    line-height: inherit; }
+  #social #social-icons {
+    width: 100%;
+    padding-top: 2em;
+    padding-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; }
+    #social #social-icons li {
+      display: inline;
+      margin-left: 7em;
+      margin-right: 7em; }
+  #social #social-links {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-left: 0; }
+    #social #social-links li {
+      display: inline;
+      margin-left: 2.5em;
+      margin-right: 2.5em; }
+      #social #social-links li a {
+        color: white;
+        text-decoration: none; }
+        #social #social-links li a:hover {
+          color: black; }
+
+#footer {
+  width: 100%;
+  height: auto;
+  background-color: #0088CC;
+  display: block; }
+  #footer ul {
+    display: inline-block;
+    color: white;
+    margin-left: 8%;
+    padding-left: 0; }
+    #footer ul li {
+      display: inline-block;
+      margin-right: .5em; }
+  #footer span {
+    float: right;
+    margin-right: 10em;
+    padding-top: 1em; }
+    #footer span a {
+      text-decoration: none;
+      color: white; }
+      #footer span a:hover {
+        color: black; }
+
+.circle {
+  width: 70px;
+  height: 70px;
+  background-color: #0088CC;
+  border-radius: 100%;
+  line-height: 70px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block; }
+
+/* Medium Devices, Desktops */
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  #header {
+    background-color: red; } }
+@media only screen and (max-width: 700px) {
+  #header {
+    width: 100%;
+    height: 8em;
+    background-color: #0088CC; }
+    #header #nav {
+      display: block;
+      width: 100%;
+      margin-left: 0;
+      margin-top: 0;
+      padding-left: 0; }
+      #header #nav li {
+        display: block;
+        text-align: center;
+        padding: .5em; }
+
+  #intro {
+    height: 20em; }
+    #intro h1 {
+      margin-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      text-align: center;
+      padding-top: 0;
+      font-size: 2.5em; }
+    #intro h3 {
+      margin-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      color: white;
+      width: 100%;
+      text-align: center; }
+    #intro #headshot {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 0;
+      float: none;
+      padding: 1.5em; }
+
+  #to {
+    width: 100%;
+    height: auto; }
+    #to h3 {
+      margin-left: 1.5em;
+      margin-top: 1.5em;
+      clear: both; }
+    #to p {
+      margin-left: 4em; }
+    #to hr {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 2em;
+      margin-top: 2em; }
+    #to ul {
+      margin-left: 14.5%;
+      list-style-type: none; }
+
+  #letter {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    float: right;
+    padding-left: 2%; }
+    #letter p {
+      margin-left: 10%;
+      margin-right: 10%; }
+    #letter img {
+      margin-top: .5em;
+      margin-left: 5%; }
+    #letter #title {
+      margin-bottom: 3em; }
+
+  #social {
+    height: auto;
+    clear: both; }
+    #social #social-icons {
+      width: 100%;
+      padding-left: 0;
+      padding-top: 0;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; }
+      #social #social-icons li {
+        display: block;
+        margin: 2em; }
+    #social #social-links li {
+      display: none; }
+
+  #footer {
+    height: 9em; }
+    #footer ul {
+      display: inline-block;
+      width: 100%;
+      margin: 0;
+      padding-top: 1.5em; }
+      #footer ul li {
+        display: block;
+        text-align: center;
+        width: 100%;
+        margin-bottom: .3em; }
+    #footer span {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      text-align: center; } }
+
+/*# sourceMappingURL=hello.css.map */

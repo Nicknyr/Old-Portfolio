@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles/twitch.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="twitch.js"></script>
+    <title>Twitch App</title>
+  </head>
+  <body>
+
+    <h1>Twitch JSON App</h1>
+
+    <section id="toggle">
+      <ul>
+        <li><a href="#" id="All">All</a></li>
+        <li><a href="#" id ="Online">Online</a></li>
+        <li><a href="#" id="Offline">Offline</a></li>
+      </ul>
+    </section>
+
+    <section id="searchBar">
+        <input type="search" placeholder="Search Twitch Channel" id="searchTerm">
+    </section>
+
+
+    <section id="results">
+
+      <div id="channelsOnline"></div>
+
+      <div id="channelsOffline"></div>
+
+
+    </section>
+
+  </body>
+
+</html>
