@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Creating a cool Bitcoin price chart using D3.js | Nick Kinlen - Frontend Developer</title>
+<meta name="generator" content="Jekyll v3.8.3" />
+<meta property="og:title" content="Creating a cool Bitcoin price chart using D3.js" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this tutorial I&#39;ll show you how to make a Bitcoin price chart using D3." />
+<meta property="og:description" content="In this tutorial I&#39;ll show you how to make a Bitcoin price chart using D3." />
+<link rel="canonical" href="http://localhost:4000/myblog/jekyll/update/2018/06/16/bitcoin-d3-chart.html" />
+<meta property="og:url" content="http://localhost:4000/myblog/jekyll/update/2018/06/16/bitcoin-d3-chart.html" />
+<meta property="og:site_name" content="Nick Kinlen - Frontend Developer" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-06-16T00:04:19-04:00" />
+<script type="application/ld+json">
+{"description":"In this tutorial I&#39;ll show you how to make a Bitcoin price chart using D3.","@type":"BlogPosting","url":"http://localhost:4000/myblog/jekyll/update/2018/06/16/bitcoin-d3-chart.html","headline":"Creating a cool Bitcoin price chart using D3.js","dateModified":"2018-06-16T00:04:19-04:00","datePublished":"2018-06-16T00:04:19-04:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/myblog/jekyll/update/2018/06/16/bitcoin-d3-chart.html"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Nick Kinlen - Frontend Developer" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nick Kinlen - Frontend Developer</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Creating a cool Bitcoin price chart using D3.js</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2018-06-16T00:04:19-04:00" itemprop="datePublished">Jun 16, 2018
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 style="text-align: center;">In this tutorial I'll show you how to make a Bitcoin price chart using D3.</h1>
+<p><br /></p>
+
+<p style="text-align: center;"><img src="https://i.imgur.com/avkhp5J.png" title="source: imgur.com" />
+<br />
+<br />
+<br /></p>
+
+<p>D3.js is an open source Javascript library that stands for Data Driven Documents. D3 is one of the best Javascript data visualization libraries out there and is extremely popular. Although the learning curve is a bit steep learning D3 is worth the time due to the tremendous amount of data visualization projects you can create with it. Everything from bar graphs, choropleth maps, force directed graphs, bubble graphs and much more can be made for the web using D3 and HTML/SVG/CSS.</p>
+
+<p>Check out the beautiful projects on the D3 Github page to get an idea of the wide range of projects that can be built with the library.
+<br /></p>
+
+<p><br /></p>
+<h3>Check out the finished <a href="https://codepen.io/nick_kinlen/full/yEYmxy/">project</a> or the <a href="https://github.com/Nicknyr/coinchart/blob/master/chart2.html">Github repo</a></h3>
+
+<p><br /></p>
+<h4>What you will learn:</h4>
+<ul>
+<li>How to set up a D3 project</li>
+<li>Making a request to the CryptoCompareAPI</li>
+<li>Plotting the Bitcoin prices from the last year on a line chart</li>
+</ul>
+<p><br /></p>
+
+<h4>Requirements:</h4>
+<h4>The project will use the following technologies:</h4>
+
+<ul>
+<li>D3.js</li>
+<li>CryptoCompare API</li>
+<li>Scalable Vector Graphis (SVG)</li>
+</ul>
+<p><br /></p>
+
+<h4>Difficulty: Intermediate</h4>
+<p><br /></p>
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h3>The finished chart:</h3>
+<p><a href="https://codepen.io/nick_kinlen/full/yEYmxy/"><img src="https://i.imgur.com/8l4i2sB.png" title="source: imgur.com" /></a></p>
+
+<p><br /></p>
+<h4>The code in it’s entirety:</h4>
+<p><br /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span>
+    <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"https://d3js.org/d3.v4.min.js"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">svg</span> <span class="nx">width</span><span class="o">=</span><span class="s2">"960"</span> <span class="nx">height</span><span class="o">=</span><span class="s2">"500"</span><span class="o">&gt;&lt;</span><span class="sr">/svg</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span>
+    <span class="o">&lt;</span><span class="nx">style</span><span class="o">&gt;</span>
+
+      <span class="nx">body</span> <span class="p">{</span>
+        <span class="nx">text</span><span class="o">-</span><span class="nx">align</span><span class="p">:</span> <span class="nx">center</span><span class="p">;</span>
+        <span class="nx">margin</span><span class="o">-</span><span class="nx">top</span><span class="p">:</span> <span class="mi">5</span><span class="nx">em</span><span class="p">;</span>
+        <span class="nx">background</span><span class="o">-</span><span class="nx">color</span><span class="p">:</span> <span class="err">#</span><span class="mi">74</span><span class="nx">b9ff</span><span class="p">;</span>
+      <span class="p">}</span>
+
+      <span class="nx">h1</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span> <span class="nx">snow</span><span class="p">;</span>
+      <span class="p">}</span>
+
+
+    <span class="o">&lt;</span><span class="sr">/style</span><span class="err">&gt;
+</span>
+
+    <span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Bitcoin</span> <span class="nx">Prices</span> <span class="k">in</span> <span class="nx">U</span><span class="p">.</span><span class="nx">S</span><span class="p">.</span> <span class="nx">Dollars</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+
+
+  <span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://min-api.cryptocompare.com/data/histoday?fsym=BTC&amp;tsym=USD&amp;limit=200&amp;aggregate=3&amp;e=CCCAGG"</span><span class="p">;</span>
+
+
+  <span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="kd">get</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">Data</span><span class="p">;</span>
+    <span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="nx">d</span><span class="p">.</span><span class="nx">time</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">time</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">});</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+
+    <span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"svg"</span><span class="p">),</span>
+        <span class="nx">margin</span> <span class="o">=</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">right</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">bottom</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="na">left</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span>
+        <span class="nx">width</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">)</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">right</span><span class="p">,</span>
+        <span class="nx">height</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">)</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">bottom</span><span class="p">,</span>
+        <span class="nx">g</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"translate("</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleTime</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">])</span>
+
+    <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="nx">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>
+
+    <span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">line</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">x</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">time</span><span class="p">);</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">y</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">y</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">close</span><span class="p">);</span> <span class="p">});</span>
+
+    <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">extent</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">time</span><span class="p">;</span> <span class="p">}));</span>
+    <span class="nx">y</span><span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">extent</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">close</span><span class="p">;</span> <span class="p">}));</span>
+
+    <span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"translate(0,"</span> <span class="o">+</span> <span class="nx">height</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke-width"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"font-size"</span><span class="p">,</span><span class="s2">".8em"</span><span class="p">);</span>
+
+    <span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">axisLeft</span><span class="p">(</span><span class="nx">y</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke-width"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"font-size"</span><span class="p">,</span><span class="s2">".8em"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"text"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"#000"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"rotate(-90)"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"y"</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"text-anchor"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"font-size"</span><span class="p">,</span> <span class="s2">"1.2em"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">"Price ($)"</span><span class="p">)</span>
+
+
+    <span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke"</span><span class="p">,</span> <span class="s2">"#ffeaa7"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke-linejoin"</span><span class="p">,</span> <span class="s2">"round"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke-linecap"</span><span class="p">,</span> <span class="s2">"round"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke-width"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"d"</span><span class="p">,</span> <span class="nx">line</span><span class="p">);</span>
+
+  <span class="p">});</span>
+
+    <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span></code></pre></div></div>
+<p><br /></p>
+
+<h4>Now let’s break it down.</h4>
+<p><br /></p>
+
+<p>The API
+In order to get accurate and up to date price information on Bitcoin to use for this project we will be using the CryptoCompare API. This will provide us with, among other things, the current price and historical price of Bitcoin (or practically any other coin we wanted to use). The API offers a lot of other data such as information on exchanges, exchange rates, historical data, information on coins themselves, etc… but for this project we will just be retrieving information on the price of Bitcoin over the last year or so.</p>
+
+<p>In order to use D3 in our project the first thing we need to do is load in the D3 library in the head of our HTML document:</p>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+<p>Next create an SVG element to hold our chart:
+<br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;svg width="960" height="500"&gt;&lt;/svg&gt;
+</code></pre></div></div>
+<p><br /></p>
+
+<p>The API Query
+The next step is to save the API endpoint into a variable so we can reference it later in our program.
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://min-api.cryptocompare.com/data/histoday?fsym=BTC&amp;tsym=USD&amp;limit=200&amp;aggregate=3&amp;e=CCCAGG"</span><span class="p">;</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>This is the API endpoint that we will be sending our request to. Let’s break down this query:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">https</span><span class="p">:</span><span class="c1">//min-api.cryptocompare.com/data/histoday?fsym=BTC</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>fsym is the parameter for the coin we are searching for, in this case Bitcoin. You could swap out fsym=BTC for fsym=ETH if you wished to search for price data on the Etherium coin or fsym=LTC for Litecoin and so on. There are approximately 1,500 coins you can get information on using this API. Just provide the fsym parameter the proper coin acronym and you’re set.
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">https</span><span class="p">:</span><span class="c1">//min-api.cryptocompare.com/data/histoday?fsym=BTC&amp;tsym=USD</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>The currency we provided in the fsym parameter is then converted into whichever currencies we specify in the tsym parameter. We could pass the tysm parameter another cryptocurrency, like Steem for example, or we could pass it fiat currency such as the US dollar or the Euro. For our project we will be passing it the US dollar:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">https</span><span class="p">:</span><span class="c1">//min-api.cryptocompare.com/data/histoday?fsym=BTC&amp;tsym=USD&amp;limit=200&amp;aggregate=3&amp;e=CCCAGG</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>The limit parameter specifies the number of data points to return. In our case it is two. Aggregate tells the API the number of days to aggregate the data over.</p>
+
+<p>The CryptoCompare API works with many different crypto exchanges when retrieving data on coins. The e parameter in our query string tells the API which online exchange we wish to pull our data from when making our request. By default the API uses CryptoCompare’s aggregate average CCCAGG. This takes data from several different exchanges and averages it out before sending it to us.</p>
+
+<p>Sending the request
+Now that we have an understanding of the request that we will be sending to the API let’s move on to how D3 sends out a request and retrieves the data for us. We do this using the d3.json method:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">d3</span><span class="p">.</span><span class="nx">json</span><span class="p">(</span><span class="nx">url</span><span class="p">).</span><span class="kd">get</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span> <span class="p">{</span>
+
+  <span class="p">});</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>d3.json takes our API URL as a parameter and then calls the Javascript get method. We pass the get method a callback function with a parameter for what to do in the event there is an error, and a second parameter for the data itself. It is inside this callback function that we will handle everything that pertains to the data from the API and how it will be displayed by D3.</p>
+
+<p>The JSON data we are retrieving looks like this:</p>
+
+<p><img src="https://i.imgur.com/ixHkxaj.png" title="source: imgur.com" /></p>
+<blockquote>
+  <p>The JSON data we are pulling from the API</p>
+</blockquote>
+
+<p><br /></p>
+
+<p>Fixing how the time is displayed
+As you can see this time format returned to us in the JSON data is not ideal for our project. We will need to use the Javascript Date object to convert this time into a more human readable form. We will do that like this:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">Data</span><span class="p">;</span>
+<span class="nx">data</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="nx">d</span><span class="p">.</span><span class="nx">time</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">time</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">)</span> <span class="p">});</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>We use the Javascript forEach method to iterate through each element, grab the time via d.time, create a new Date object for each time, and then multiple that by 1000 to format the time in a more readable way. The time is now displayed like this:</p>
+
+<p>Creating the SVG element and dimensions
+The next part of the code uses the d3 select method and selects our svg element that we created in the head of our HTML document. We assign this svg element to the variable svg. We then create variables for the margin, width, and height of our element. We can adjust the height and width of our svg element by changing the values stored in the margin object. These values are then assigned to the g variable we have created. Later in the program g will be used to draw/append our x and y axis as well as create the path that will plot the Bitcoin price on our chart.
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">"svg"</span><span class="p">),</span>
+        <span class="nx">margin</span> <span class="o">=</span> <span class="p">{</span><span class="na">top</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">right</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="na">bottom</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="na">left</span><span class="p">:</span> <span class="mi">50</span><span class="p">},</span>
+        <span class="nx">width</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"width"</span><span class="p">)</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">right</span><span class="p">,</span>
+        <span class="nx">height</span> <span class="o">=</span> <span class="o">+</span><span class="nx">svg</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"height"</span><span class="p">)</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">-</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">bottom</span><span class="p">,</span>
+        <span class="nx">g</span> <span class="o">=</span> <span class="nx">svg</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"translate("</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">left</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="nx">margin</span><span class="p">.</span><span class="nx">top</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">);</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>Creating Scales
+Scales are used in D3 to make visual representations of abstract and complex data and map it onto the screen in a way that is proportionate and visually appealing. The most common types of scales in D3 are linear scales.</p>
+
+<p>Linear scales are used to plot continuous quantitative data. The data we are working with is money and time, both of which are linear and continuous. D3 also offers ordinal scales, but because our data is linear we will not be using ordinal scales for this project.</p>
+
+<p>To display the date on the x axis of our chart we will be using the d3.scaleTime method. The range method is used to set the width of the x axis. The range method is passed an array with two parameters. Passing it 0 and the width variable we created earlier sets the x axis’ width to that of the width variable.
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleTime</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="nx">width</span><span class="p">]);</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>The same approach is used to define the y axis. However there are some differences. First, we use d3.scaleLinear for the y axis because we are not dealing with plotting time on this axis like we did on the x axis. Secondly, we use the height variable in this array and the order is reversed:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">var</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">scaleLinear</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">range</span><span class="p">([</span><span class="nx">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>Now that we have the x and y axis drawn we can move on to drawing the chart’s line.</p>
+
+<p>Drawing the chart’s line
+We will now use D3’s line function to draw a line on our chart. D3.line takes the time provided by the JSON data (d.time) and the closing price (d.close) and uses this data for the x and y coordinates of the line.
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">var</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">line</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">x</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">time</span><span class="p">);</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">y</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">y</span><span class="p">(</span><span class="nx">d</span><span class="p">.</span><span class="nx">close</span><span class="p">);</span> <span class="p">});</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>Working with D3’s domain method
+When working with D3 charts you will run into the domain method often. Domain is a way for D3 to determine the size of your dataset and it’s boundaries. For example, consider the following example array:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myData</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">];</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>If this myData array was the dataset you were charting the domain would be the smallest number (in this case 0), and the largest number (in this case 17). The domain would be 0-17.</p>
+
+<p>We will handle the x domain for our graph using the following code:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">x</span><span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">extent</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">time</span><span class="p">;</span> <span class="p">}));</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>In this line of code we are passing the time from our data (d.time) to D3’s extent method. The d3.extent method takes an array and returns the minimum and maximum values. In our code d3.extent passes the minimum and maximum numbers from our time data and passes this to the domain. We have now set our x domain to contain the appropriate times for our x-axis.</p>
+
+<p>We do the same for the y domain, with the only difference being we pass the Bitcoin prices (d.close) to the d3.extent function instead of d.time:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nx">y</span><span class="p">.</span><span class="nx">domain</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">extent</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">d</span><span class="p">.</span><span class="nx">close</span><span class="p">;</span> <span class="p">}));</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>The x and y axis now both contain the appropriate domain data.</p>
+
+<p>Drawing the graph’s line
+In this next part of the program we will be using the SVG g element to group together multiple SVG elements.
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"translate(0,"</span> <span class="o">+</span> <span class="nx">height</span> <span class="o">+</span> <span class="s2">")"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">axisBottom</span><span class="p">(</span><span class="nx">x</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke-width"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"font-size"</span><span class="p">,</span><span class="s2">".8em"</span><span class="p">);</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>Using the call method and passing it d3.axisBottom and passing it the x variable we created to store our x axis in appends the x axis line on our chart. Stroke-width and fill make our line thicker, and font-size does exactly what it sounds like, increases the font size of the labels.</p>
+
+<p>Creating the y axis is done the same way, but we use the d3.axisLeft instead:
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"g"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">d3</span><span class="p">.</span><span class="nx">axisLeft</span><span class="p">(</span><span class="nx">y</span><span class="p">))</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke-width"</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">style</span><span class="p">(</span><span class="s2">"font-size"</span><span class="p">,</span><span class="s2">".8em"</span><span class="p">)</span>
+      <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"text"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"#000"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"transform"</span><span class="p">,</span> <span class="s2">"rotate(-90)"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"y"</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"text-anchor"</span><span class="p">,</span> <span class="s2">"end"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"font-size"</span><span class="p">,</span> <span class="s2">"1.2em"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">"Price ($)"</span><span class="p">)</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<p>In addition to plotting the y axis itself we will also append text that displays the “Price ($)” label and ticks that display the price range.</p>
+
+<p>The fill attribute determines what color the price label will be. The transform attribute transforms the price label by rotating it so that it displays in a vertical fashion rather than being horizontal like the ticks. Setting the y attribute to 20 puts space between the price label and the actual y axis itself. The text-anchor element is another SVG element that is used to align an element with either the start, middle, or end of another element. In our case we are using text-anchor to align the price label with the end of the y axis.
+<br /></p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">g</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">"path"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">datum</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"fill"</span><span class="p">,</span> <span class="s2">"none"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke"</span><span class="p">,</span> <span class="s2">"#FFB041"</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"stroke-linejoin"</span><span class="p">,</span> <span class="s2">"round”)
+        .attr("</span><span class="nx">stroke</span><span class="o">-</span><span class="nx">linecap</span><span class="s2">", "</span><span class="nx">round</span><span class="s2">")
+        .attr("</span><span class="nx">stroke</span><span class="o">-</span><span class="nx">width</span><span class="s2">", 2)
+        .attr("</span><span class="nx">d</span><span class="s2">", line);
+</span></code></pre></div></div>
+<p><br /></p>
+
+<p>In order to draw the line of our graph we will need to append an SVG path to our g variable. The data from our JSON is passed to the path via the datum method.</p>
+
+<p>The next few lines set the attributes of our line and allow us to drawn the line how we want it to look. The fill attribute determines whether or not the inside of our path line is filled in, the stroke determines the color of the line, stroke-width determines the width of our line. Stroke-linejoin specifies the shape at the corners of our lines and stroke-linecap specifies the shapes of the end of our lines.</p>
+
+<p>The final line grabs the data from our d3.json request and plots the line using the line variable we created earlier.</p>
+
+<p>The end
+This sums up my tutorial on creating a basic D3 line graph that displays Bitcoin prices from JSON data from an API call. I hope this tutorial was informative and concise and that you learned the basics of creating a D3 line graph. The code in it’s entirety can be found here.</p>
+
+  </div><a class="u-url" href="/myblog/jekyll/update/2018/06/16/bitcoin-d3-chart.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Nick Kinlen - Frontend Developer</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Nick Kinlen - Frontend Developer</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/nicknyr"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">nicknyr</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
