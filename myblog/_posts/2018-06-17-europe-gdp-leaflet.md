@@ -84,7 +84,7 @@ Now that we have an understanding of the GeoJSON format let’s move on to the p
 
 <br>
 <h3>The finished project</h3>
-<a href="https://www.eurogdp.herokuapp.com"><img src="https://i.imgur.com/lFvXjQj.png" title="source: imgur.com" /></a>
+<a href="https://eurogdp.herokuapp.com/"><img src="https://i.imgur.com/lFvXjQj.png" title="source: imgur.com" /></a>
 
 
 >The finished project with Italy hovered over
